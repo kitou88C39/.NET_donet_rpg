@@ -20,5 +20,10 @@ namespace dotnet_rpg.Controllers
         {
             return OK(characters);
         }
+        [HttpGet]
+        public ActionResult<Character> Getsingle()
+        {
+            return OK(characters[0]);
+        }
     }
 }
