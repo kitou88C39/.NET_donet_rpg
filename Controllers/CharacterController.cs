@@ -11,5 +11,9 @@ namespace dotnet_rpg.Controllers
     public class CharacterController : ControllerBase
     {
         private static Character knight = new Character();
+        public IActionResult Get()
+        {
+            return BadRequest(knight);
+        }
     }
 }
