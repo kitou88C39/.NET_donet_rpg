@@ -11,9 +11,10 @@ namespace dotnet_rpg.Controllers
     public class CharacterController : ControllerBase
     {
         private static Character knight = new Character();
-        public IActionResult Get()
+        [HttpGet]
+        public IActionResult<Character> Get()
         {
-            return BadRequest(knight);
+            return OK(knight);
         }
     }
 }
