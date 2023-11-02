@@ -12,18 +12,18 @@ namespace dotnet_rpg.Controllers
     {
         private static List<Character> characters = new List<Character> {
             new Character(),
-            new Character { Name = "Sam" }
+            new Character { Id = 1, Name = "Sam" }
         };
 
         [HttpGet("GetAll")]
         public IActionResult<List<Character>> Get()
         {
-            return OK(characters);
+            return Ok(characters);
         }
-        [HttpGet]
-        public ActionResult<Character> Getsingle()
+        [HttpGet("{id}")]
+        public ActionResult<Character> GetSingle(int id)
         {
-            return OK(characters[0]);
+            return Ok(characters.FirstOrDefault(c => c.Id == id));
         }
     }
 }
