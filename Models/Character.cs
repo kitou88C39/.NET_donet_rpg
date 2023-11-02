@@ -1,5 +1,5 @@
 namespace Dotnet_rpg.Models;
-
+{
 public class Character
 {
     public int Id { get; set; }
@@ -8,4 +8,6 @@ public class Character
     public int Strength { get; set; } = 10;
     public int Defense { get; set; } = 10;
     public int Intelligence { get; set; } = 10;
+    public int RpgClass class { get; set; }
+}
 }
