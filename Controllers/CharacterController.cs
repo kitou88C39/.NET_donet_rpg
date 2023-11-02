@@ -15,7 +15,7 @@ namespace dotnet_rpg.Controllers
             new Character { Name = "Sam" }
         };
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public IActionResult<List<Character>> Get()
         {
             return OK(characters);
