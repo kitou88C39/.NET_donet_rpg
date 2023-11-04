@@ -7,6 +7,7 @@ namespace dotnet_rpg.Services.CharacterService
 {
     public interface ICharacterService
     {
-        
+        List<Character> GetAllCharacters();
+        Character GetCharacterById(int id);
     }
 }
