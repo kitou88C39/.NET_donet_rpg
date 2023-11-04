@@ -9,5 +9,6 @@ namespace dotnet_rpg.Services.CharacterService
     {
         List<Character> GetAllCharacters();
         Character GetCharacterById(int id);
+        List<Character> AddAllCharacters(Character newCharacter);
     }
 }
