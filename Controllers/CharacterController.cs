@@ -14,6 +14,9 @@ namespace dotnet_rpg.Controllers
             new Character(),
             new Character { Id = 1, Name = "Sam" }
         };
+        public CharacterController(ICharacterService characterService) {
+           
+        };
 
         [HttpGet("GetAll")]
         public IActionResult<List<Character>> Get()
