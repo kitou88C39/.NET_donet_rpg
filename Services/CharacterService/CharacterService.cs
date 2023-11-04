@@ -7,6 +7,10 @@ namespace dotnet_rpg.Services.CharacterService
 {
     public interface CharacterService:ICharacterService
     {
+        private static List<Character> characters = new List<Character> {
+            new Character(),
+            new Character { Id = 1, Name = "Sam" }
+        };
         public List<Character> AddCharacter(Character newCharacter)
         {
             characters.Add(newCharacter);
