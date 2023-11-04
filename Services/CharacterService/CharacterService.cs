@@ -9,15 +9,16 @@ namespace dotnet_rpg.Services.CharacterService
     {
         public List<Character> AddCharacter(Character newCharacter)
         {
-            throw new NotImplementedException();
+            characters.Add(newCharacter);
+            return characters;
         }
         public List<Character> GetAllCharacter()
         {
-            throw new NotImplementedException();
+            return characters;
         }
         public Character GetCharacterById (int id)
         {
-            throw new NotImplementedException();
+            return characters.FirstOrDefault(c => c.Id == id);
         }
 
     }
