@@ -14,10 +14,10 @@ namespace dotnet_rpg.Controllers
             new Character(),
             new Character { Id = 1, Name = "Sam" }
         };
-        public ICharacterService CharacterService { get; set; }
+        private readonly ICharacterService_characterService;
         public CharacterController(ICharacterService characterService) 
         {
-            this.CharacterService = characterService;
+            _characterService = characterService;
            
         };
 
