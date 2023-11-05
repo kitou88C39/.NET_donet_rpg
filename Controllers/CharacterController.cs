@@ -12,7 +12,7 @@ namespace dotnet_rpg.Controllers
     {
         
         private readonly ICharacterService_characterService;
-        public CharacterController(ICharacterService characterService) 
+        public CharacterController(ICharacterService characterService)
         {
             _characterService = characterService;
            
@@ -21,18 +21,17 @@ namespace dotnet_rpg.Controllers
         [HttpGet("GetAll")]
         public IActionResult<List<Character>> Get()
         {
-            return Ok(characters);
+            return Ok(_CharacterService.GetAllCharacters());
         }
         [HttpGet("{id}")]
         public ActionResult<Character> GetSingle(int id)
         {
-            return Ok(characters.FirstOrDefault(c => c.Id == id));
+            return Ok(_CharacterService.GetAllCharacters(id));
         }
         [HttpPost]
          public ActionResult<Character> AddCharacter(Character newCharacter)
         {
-            characters.Add(newCharacter);
-            return Ok(characters);
+            return Ok(_CharacterService.AddCharacters(newCharacter));
         }
 
     }
