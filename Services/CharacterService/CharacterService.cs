@@ -26,12 +26,10 @@ namespace dotnet_rpg.Services.CharacterService
         }
         public async Task<ServiceResponse<Character>> GetCharacterById (int id)
         {
+            var serviceResponse = new ServiceResponse<Character>();
             var character = characters.FirstOrDefault(c => c.Id == id);
-            if(character is not null)
-              return character;
-
-            throw new Exception ("Character not found");
+            serviceResponse.Data = characters;
+            return serviceResponse;
         }
-
     }
 }
