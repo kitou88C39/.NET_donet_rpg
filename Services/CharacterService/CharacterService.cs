@@ -1,3 +1,4 @@
+global using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,11 @@ namespace dotnet_rpg.Services.CharacterService
             new Character(),
             new Character { Id = 1, Name = "Sam" }
         };
+        private CharacterService(IMapper mapper)
+        {
+            
+        };
+
         public async Task<ServiceResponse<List<GetCharacterDto>>> AddCharacter(AddCharacterDto newCharacter)
         {
             var serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
