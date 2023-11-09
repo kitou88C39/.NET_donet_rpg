@@ -15,6 +15,7 @@ namespace dotnet_rpg.Services.CharacterService
         {
             var serviceResponse = new ServiceResponse<List<Character>>();
             characters.Add(newCharacter);
+            serviceResponse.Data = characters;
             return characters;
         }
         public async Task<ServiceResponse<List<Character>>> GetAllCharacter()
