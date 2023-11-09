@@ -33,6 +33,5 @@ namespace dotnet_rpg.Controllers
         {
             return Ok(await_CharacterService.AddCharacters(newCharacter));
         }
-
     }
 }
