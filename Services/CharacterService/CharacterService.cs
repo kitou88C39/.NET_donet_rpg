@@ -20,7 +20,9 @@ namespace dotnet_rpg.Services.CharacterService
         }
         public async Task<ServiceResponse<List<Character>>> GetAllCharacter()
         {
-            return characters;
+            var serviceResponse = new ServiceResponse<List<Character>>();
+            serviceResponse.Data = characters;
+            return serviceResponse;
         }
         public async Task<ServiceResponse<Character>> GetCharacterById (int id)
         {
