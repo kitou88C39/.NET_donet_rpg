@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 
 namespace dotnet_rpg
 {
-public class AutoMapperProfile
-{
-    
-}
+  public class AutoMapperProfile : profile
+  {
+    public AutoMapperProfile()
+    {
+        CreateMap<Character,GetCharacterDto>();
+    }
+  }
 }
