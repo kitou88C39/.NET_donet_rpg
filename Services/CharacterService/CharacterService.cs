@@ -41,5 +41,10 @@ namespace dotnet_rpg.Services.CharacterService
             serviceResponse.Data = _IMapper.Map<GetCharacterDto>(character);
             return serviceResponse;
         }
+
+        public Task<ServiceResponse<GetCharacterDto>> UpdateCharacter (UpdateCharacterDto updateCharacter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
