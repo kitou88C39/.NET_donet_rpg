@@ -49,6 +49,9 @@ namespace dotnet_rpg.Services.CharacterService
             try
             {
             var character = characters.FirstOrDefault(c => c.Id == updateCharacter.id);
+            if(character is null)
+               throw new Exception($"Character with Id '{updatedCharacter.Id}' not found.");
+        
 
             character.Name = updateCharacter.Name;
             character.HitPoints = updateCharacter.HitPoints;
@@ -59,7 +62,7 @@ namespace dotnet_rpg.Services.CharacterService
 
             serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
             }
-            catch(Exception ex) 
+            catch(Exception ex)
             {
                 serviceResponse.Success = false;
                 serviceResponse.Message = ex.Message;
