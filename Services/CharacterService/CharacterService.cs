@@ -31,23 +31,18 @@ namespace dotnet_rpg.Services.CharacterService
 
         public  async Task<ServiceResponse<List<GetCharcterDto>>> DeleteCharacter(int id)
         {
-            var serviceResponse = new ServiceResponse<GetCharacterDto>();
+            var serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
             try
             {
-            var character = characters.FirstOrDefault(c => c.Id == updateCharacter.id);
+            var character = characters.First(c => c.Id == id);
             if(character is null)
-               throw new Exception($"Character with Id '{updatedCharacter.Id}' not found.");
+               throw new Exception($"Character with Id '{Id}' not found.");
         
             _mapper.Map(updateCharacter, character);
  
-            character.Name = updateCharacter.Name;
-            character.HitPoints = updateCharacter.HitPoints;
-            character.Strength = updateCharacter.Strength;
-            character.Defense = updateCharacter.Defense;
-            character.Intelligence = updateCharacter.Intelligence;
-            character.Class = updateCharacter.Class;
+            characters.Remove(character);
 
-            serviceResponse.Data = _mapper.Map<GetCharacterDto>(character);
+            serviceResponse.Data = characters.Select(c=> _mapper.Map<GetCharacterDto>(c)).ToList();
             }
             catch(Exception ex)
             {
