@@ -28,6 +28,12 @@ namespace dotnet_rpg.Services.CharacterService
             serviceResponse.Data = characters.Select(c => _mapper.Map<GetCharacterDto>(c)).ToList();
             return serviceResponse;
         }
+
+        public Task<ServiceResponse<List<GetCharcterDto>>> DeleteCharacter(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<ServiceResponse<List<GetCharacterDto>>> GetAllCharacter()
         {
             var serviceResponse = new ServiceResponse<List<GetCharacterDto>>();
